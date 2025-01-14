@@ -3,4 +3,26 @@
 {% block content %}
 <h1 class="style_heading__ZmEnf Heading_module_container__7b355c09 Heading_module_level1__7b355c09">
     Последние вакансии</h1>
+<table style="border: 1px solid #333;">
+    <thead style="background-color: #333; color: #fff;">
+        <tr>
+            <th>Название</th>
+            <th>Компания</th>
+            <th>Оклад</th>
+            <th>Название региона</th>
+            <th>Дата публикации</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for v in vacancies %}
+            <tr id="answer">
+                <td style="border: 1px solid #333;">{{ v.name }}</td>
+                <td style="border: 1px solid #333;">{{ v.employer.name }}</td>
+                <td style="border: 1px solid #333;">{{ v.salary.from }}</td>
+                <td style="border: 1px solid #333;">{{ v.area.name }}</td>
+                <td style="border: 1px solid #333;">{{ v.published_at }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
 {% endblock %}
