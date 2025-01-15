@@ -1,0 +1,159 @@
+.test {
+  width: 610px;
+}
+
+.magritte-card {
+  background-color: #fff;
+  border-width: 0;
+  box-sizing: border-box;
+  display: inline-flex;
+  transition-duration: 200ms;
+  transition-property: box-shadow, border-color, background-color;
+  transition-timing-function: cubic-bezier(0.25,0.1,0.25,1);
+  --magritte-card-border-color: #dce3eb;
+  --magritte-card-hovered-border-color: #dce3eb;
+  --magritte-card-disabled-border-color: #dce3eb;
+
+  font-family: "Inter";
+  text-decoration: none;
+
+  padding: 12px;
+  width: 100%;
+
+  margin-bottom: 16px;
+}
+
+.magritte-card:last-child {
+  margin-bottom: 0;
+}
+
+.magritte-card-border-radius {
+  border-radius:24px;
+  --magritte-ui-table-border-radius:24px;
+}
+
+@media (min-width: 1020px) {
+  .magritte-card-shadow-on-hover.magritte-card-action:hover:not(.magritte-card-disabled___SMFnB_6-1-20), body.magritte-old-layout .magritte-card-show-shadow___x4pSd_6-1-20.magritte-card-action___4A43B_6-1-20:hover:not(.magritte-card-disabled___SMFnB_6-1-20) {
+      box-shadow: 0px 8px 16px 0px #7090b03d;
+  }
+}
+
+.magritte-card-action {
+  cursor: pointer;
+}
+
+.magritte-card-with-border {
+  border: 1px solid #dce3eb;
+}
+
+.vacancy-info {
+  padding: 12px;
+}
+
+.adv-mark-container {
+  position: relative;
+}
+
+.adv-mark {
+  background-color: #fdb972;
+  border-radius: 0 8px 8px 0;
+  height: 100%;
+  left: -25px;
+  position: absolute;
+  width: 8px;
+}
+
+.bloko-header-section-2 {
+  margin: 0;
+}
+
+.magritte-text_typography-title {
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.0075em;
+  line-height: 32px;
+  text-decoration: none;
+  text-indent: 0px;
+  text-transform: none;
+}
+
+.compensation-labels {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  line-height: 24px;
+}
+
+.magritte-text_typography-label-regular {
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: -0.005em;
+  line-height: 26px;
+  text-decoration: none;
+  text-indent: 0px;
+  text-transform: none;
+}
+
+.magritte-tag_style-neutral {
+  background-color: #f1f4f9;
+  --magritte-ui-icon-color-override: #5e6c77;
+}
+
+.magritte-tag_size-medium {
+  border-radius: 8px;
+  box-sizing: border-box;
+  gap: 4px;
+  max-width: 100%;
+  min-height: 20px;
+  padding: 4px 8px;
+}
+
+.magritte-tag_style-green {
+  background-color: green;
+  --magritte-ui-icon-color-override: #5e6c77;
+}
+
+.magritte-tag_style-neutral .magritte-tag__label__ {
+  color: #5e6c77;
+}
+
+.magritte-tag__label__ {
+  font-family: "Inter";
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.005em;
+  line-height: 20px;
+  overflow: hidden;
+  text-decoration: none;
+  text-indent: 0px;
+  text-overflow: ellipsis;
+  text-transform: none;
+  white-space: nowrap;
+}
+
+.hide {
+  display: none;
+}
+
+/* div {
+  display: block;
+  unicode-bidi: isolate;
+} */
+
+/* .vacancy-card--n77Dj8TY8VIUF0yM {
+  width: 100%;
+} */
+
+/* .magritte-text-dynamic___71-Al_3-0-22 {
+  display: inline-block;
+}
+
+.magritte-text-dynamic_stretched___wzj-Q_3-0-22 {
+  width: 100%;
+} */
+
+/* @media (min-width: 1020px) {
+  body.magritte-old-layout .wide-container--ZEcmUvt6oNs8OvdB {
+      display: initial;
+  }
+} */

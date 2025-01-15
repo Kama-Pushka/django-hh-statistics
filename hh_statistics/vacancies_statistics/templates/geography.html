@@ -7,6 +7,7 @@
         <div>
             <div>
 
+                <h2>Уровень зарплат по городам</h2>
                 <div>
                     {% if salary_chart.url is not None %}
                     <img src="{{ salary_chart.url }}" alt="">
@@ -14,6 +15,7 @@
                     <div>{{ salary_data|safe }}</div>
                 </div>
 
+                <h2>Доля вакансий по городам</h2>
                 <div>
                     {% if vacancy_chart.url is not None %}
                     <img src="{{ vacancy_chart.url }}" alt="">

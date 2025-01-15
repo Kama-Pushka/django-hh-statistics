@@ -1,28 +1,92 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
+<head>
+    <meta charset="utf-8">
+    <link href="../static/css/hh_cards.css" rel="stylesheet">
+    <title>Последние вакансии</title>
+</head>
 <h1 class="style_heading__ZmEnf Heading_module_container__7b355c09 Heading_module_level1__7b355c09">
     Последние вакансии</h1>
-<table style="border: 1px solid #333;">
-    <thead style="background-color: #333; color: #fff;">
-        <tr>
-            <th>Название</th>
-            <th>Компания</th>
-            <th>Оклад</th>
-            <th>Название региона</th>
-            <th>Дата публикации</th>
-        </tr>
-    </thead>
-    <tbody>
+<div class="test">
+    <div>
         {% for v in vacancies %}
-            <tr id="answer">
-                <td style="border: 1px solid #333;">{{ v.name }}</td>
-                <td style="border: 1px solid #333;">{{ v.employer.name }}</td>
-                <td style="border: 1px solid #333;">{{ v.salary.from }}</td>
-                <td style="border: 1px solid #333;">{{ v.area.name }}</td>
-                <td style="border: 1px solid #333;">{{ v.published_at }}</td>
-            </tr>
+        <div tabindex="0"
+            class="magritte-card magritte-card-border-radius magritte-card-action magritte-card-shadow-on-hover magritte-card-with-border">
+            <div>
+                <div class="vacancy-info">
+                    <div class="adv-mark-container">
+                        <div class="adv-mark"></div>
+                        <h2 class="bloko-header-section-2">
+                            <a tabindex="0"
+                                href="{{ v.alternate_url }}"
+                                target="_blank">
+                                <span class="magritte-text_typography-title">{{ v.name }}</span>
+                            </a>
+                        </h2>
+                        <div>
+                            <div class="compensation-labels">
+                                {% if v.salary.from is not None %}
+                                <span class="magritte-text_typography-label-regular">
+                                    от {{ v.salary.from }}
+                                </span>
+                                {% endif %}
+                                {% if v.salary.to is not None %}
+                                <span class="magritte-text_typography-label-regular">
+                                    до {{ v.salary.to }}
+                                </span>
+                                {% endif %}
+                                {% if v.salary.currency is not None %}
+                                <span class="magritte-text_typography-label-regular">
+                                    {{ v.salary.currency }}
+                                </span>
+                                {% endif %}
+                                <div class="magritte-tag_style-neutral magritte-tag_size-medium magritte-tag__label__">
+                                    <span>Опыт {{ v.experience.name }}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <a tabindex="0" href="{{ v.employer.alternate_url }}">
+                                <span>{{ v.employer.name }}</span>
+                            </a>
+                        </div>
+                        <div>
+                            <span>{{ v.area.name }}</span>
+                        </div>
+                        <div>
+                            <span class="can-be-hide hide">{{ v.desc|safe }}</span>
+                        </div>
+                        <div>
+                            <span>{{ v.published_at }}</span>
+                        </div>
+                    </div>
+                    <div>
+                        {% for s in v.skills %}
+                        <span class="magritte-tag_style-neutral magritte-tag_size-medium magritte-tag__label__">{{ s.name }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+                <!-- <div>
+                    <a tabindex="0" role="button" aria-disabled="false"
+                        href="/applicant/vacancy_response?vacancyId=115443095&amp;employerId=4237330&amp;hhtmFrom=vacancy_search_list">
+                        <div>
+                            <span>Откликнуться</span>
+                        </div>
+                    </a>
+                    <button type="button">
+                        <div>
+                            <span>Контакты</span>
+                        </div>
+                    </button>
+                </div> -->
+            </div>
+        </div>
         {% endfor %}
-    </tbody>
-</table>
+    </div>
+</div>
+<script src="{% static 'js/text.js' %}"></script>
 {% endblock %}
