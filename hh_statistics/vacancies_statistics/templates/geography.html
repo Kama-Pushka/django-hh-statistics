@@ -3,27 +3,19 @@
 {% block content %}
 <h1 class="style_heading__ZmEnf Heading_module_container__7b355c09 Heading_module_level1__7b355c09">
     География</h1>
-    <div>
-        <div>
-            <div>
+<h2>Уровень зарплат по городам (C# разработчик)</h2>
+<div class="statistic-flex">
+    <div>{{ salary_table|safe }}</div>
+    {% if salary_img.url is not None %}
+    <img src="{{ salary_img.url }}" alt="">
+    {% endif %}
+</div>
 
-                <h2>Уровень зарплат по городам</h2>
-                <div>
-                    {% if salary_chart.url is not None %}
-                    <img src="{{ salary_chart.url }}" alt="">
-                    {% endif %}
-                    <div>{{ salary_data|safe }}</div>
-                </div>
-
-                <h2>Доля вакансий по городам</h2>
-                <div>
-                    {% if vacancy_chart.url is not None %}
-                    <img src="{{ vacancy_chart.url }}" alt="">
-                    {% endif %}
-                    <div>{{ vacancy_data|safe }}</div>
-                </div>
-
-            </div>
-        </div>
-    </div>
+<h2>Доля вакансий по городам (C# разработчик)</h2>
+<div class="statistic-flex">
+    <div>{{ vacancy_table|safe }}</div>
+    {% if vacancy_img.url is not None %}
+    <img src="{{ vacancy_img.url }}" alt="">
+    {% endif %}
+</div>
 {% endblock %}

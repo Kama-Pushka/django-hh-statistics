@@ -21,6 +21,27 @@ p.main-header {
   margin-bottom: 0;
 }
 
+.statistic-flex {
+  display: flex;
+  align-items: flex-start;
+  /* justify-content: space-between; */
+  margin: 0 auto;
+  padding: 0;
+}
+.statistic-flex img {
+  height: 350px;
+  margin-top: 30px;
+  margin-left: 20px;
+}
+
+.stats > div {
+  display: none;
+}
+
+div.active-stat {
+  display: flex;
+}
+
 /*
 */
 
@@ -99,6 +120,7 @@ p.main-header {
 .formats-menu_wrapper__P4DMi {
   background:#fff;
   border-radius:20px;
+  box-shadow: 0px 1px 10px 0px #00000017;
 }
 
 .common_leftColumn__0p3gX {
@@ -124,7 +146,8 @@ p.main-header {
 .style_wrapper__Lx6xr {
   background-color:#fff;
   /* padding:16px; */
-  margin-bottom:32px
+  margin-bottom:32px;
+  box-shadow: 0px 1px 10px 0px #00000017;
 }
 
 .common_rightColumn__oQaGc {
@@ -149,10 +172,6 @@ p.main-header {
 .formats-menu_item__ZPflq {
   padding:16px 20px;
   border-bottom:1px solid #f5f5f5;
-}
-
-.Text_module_strong__837f2f09 {
-  font-weight:600;
 }
 
 /* *,
@@ -188,27 +207,53 @@ p.main-header {
   margin-bottom:300px
 }
 
+/* .testtt {
+  background:#ebebeb;
+  border-radius:16px;
+} */
 
+.table-body tr td:last-child {
+  text-align: center;
+}
 
-.style_wrapper__9NcW_ {
+.table-head tr th {
+  width: 50%;
+  min-width: 90px;
+}
+
+.block_style_wrapper {
   background:#f6f5f4;
   border-radius:16px;
   padding:16px;
   margin:24px 0;
 }
 
-.style_wrapper__9NcW_ .style_link__GvpBu {
+.block_style_wrapper .style_link__GvpBu {
   cursor:pointer;
   -moz-box-sizing:border-box;
   box-sizing:border-box;
   border-radius:8px;
-  color:var(--color-D80);
   padding:12px 16px
 }
-.style_wrapper__9NcW_ .style_link__GvpBu:hover {
+.block_style_wrapper .style_link__GvpBu:hover {
   background-color:#fff;
 }
-.style_wrapper__9NcW_ .style_link__GvpBu:active {
+.block_style_wrapper .style_link__GvpBu:active {
+  background-color:#b3bac3
+}
+
+.stat-buttons {
+  background-color: transparent;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  line-height: 44px;
+}
+.block_style_wrapper .style_link__GvpBu:hover {
+  background-color:#f6f5f4;
+}
+.block_style_wrapper .style_link__GvpBu:active {
   background-color:#b3bac3
 }
 
@@ -297,6 +342,49 @@ p.main-header {
   max-width:100%;
 }
 
+.Text_module_strong__837f2f09 {
+  font-weight:600;
+}
+
+a.Text_module_strong__837f2f09 {
+  font-weight:600;
+  display: block;
+  margin-bottom: 0;
+}
+
+.profession__info {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 1px 10px 0px #00000017;
+  padding: 22px 22px 20px 22px;
+  background-color: white;
+  border-radius: 12px;
+
+  .average_salary, .vacancies {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #FAFAFA;
+    flex: 0 0 102px;
+    padding: 0 20px;
+    margin: 0 0 24px 0;
+    border-radius: 6px;
+
+    .value {
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 28.8px;
+      color: black;
+    }
+    .title {
+      color: #8E8E8E;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 22.4px;
+    }
+  }
+}
+
 /*
 */
 
@@ -361,7 +449,8 @@ p.main-header {
 }
 
 .signin {
-  display: flex;
+  display: none;
+  /* display: flex; */
   align-items: center;
   justify-content: center;
   width: 44px;

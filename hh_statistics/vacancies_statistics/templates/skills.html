@@ -1,83 +1,92 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
 <h1 class="style_heading__ZmEnf Heading_module_container__7b355c09 Heading_module_level1__7b355c09">
     Навыки</h1>
-<div>
-        <div>
-            <div>
-
-                <div>
-                    {% if top_skills_2015_chart.url is not None %}
-                    <img src="{{ top_skills_2015_chart.url }}" alt="">
-                    {% endif %}
-                    <div>{{ top_skills_2015_data|safe }}</div>
-                </div>
-
-                <div>
-                    {% if top_skills_2016_chart.url is not None %}
-                    <img src="{{ top_skills_2016_chart.url }}" alt="">
-                    {% endif %}
-                    <div>{{ top_skills_2016_data|safe }}</div>
-                </div>
-
-                <div>
-                    {% if top_skills_2017_chart.url is not None %}
-                    <img src="{{ top_skills_2017_chart.url }}" alt="">
-                    {% endif %}
-                    <div>{{ top_skills_2017_data|safe }}</div>
-                </div>
-
-                <div>
-                    {% if top_skills_2018_chart.url is not None %}
-                    <img src="{{ top_skills_2018_chart.url }}" alt="">
-                    {% endif %}
-                    <div>{{ top_skills_2018_data|safe }}</div>
-                </div>
-
-                <div>
-                    {% if top_skills_2019_chart.url is not None %}
-                    <img src="{{ top_skills_2019_chart.url }}" alt="">
-                    {% endif %}
-                    <div>{{ top_skills_2019_data|safe }}</div>
-                </div>
-
-                <div>
-                    {% if top_skills_2020_chart.url is not None %}
-                    <img src="{{ top_skills_2020_chart.url }}" alt="">
-                    {% endif %}
-                    <div>{{ top_skills_2020_data|safe }}</div>
-                </div>
-
-                <div>
-                    {% if top_skills_2021_chart.url is not None %}
-                    <img src="{{ top_skills_2021_chart.url }}" alt="">
-                    {% endif %}
-                    <div>{{ top_skills_2021_data|safe }}</div>
-                </div>
-
-                <div>
-                    {% if top_skills_2022_chart.url is not None %}
-                    <img src="{{ top_skills_2022_chart.url }}" alt="">
-                    {% endif %}
-                    <div>{{ top_skills_2022_data|safe }}</div>
-                </div>
-
-                <div>
-                    {% if top_skills_2023_chart.url is not None %}
-                    <img src="{{ top_skills_2023_chart.url }}" alt="">
-                    {% endif %}
-                    <div>{{ top_skills_2023_data|safe }}</div>
-                </div>
-
-                <div>
-                    {% if top_skills_2024_chart.url is not None %}
-                    <img src="{{ top_skills_2024_chart.url }}" alt="">
-                    {% endif %}
-                    <div>{{ top_skills_2024_data|safe }}</div>
-                </div>
-
-            </div>
-        </div>
+<h2>ТОП-20 навыков по годам (C# разработчик)</h2>
+<nav class="stat-buttons block_style_wrapper">
+    <span class="style_link__GvpBu Text_module_strong__837f2f09 Text_module_size16__837f2f09" href="2015">2015</span>
+    <span class="style_link__GvpBu Text_module_strong__837f2f09 Text_module_size16__837f2f09" href="2016">2016</span>
+    <span class="style_link__GvpBu Text_module_strong__837f2f09 Text_module_size16__837f2f09" href="2017">2017</span>
+    <span class="style_link__GvpBu Text_module_strong__837f2f09 Text_module_size16__837f2f09" href="2018">2018</span>
+    <span class="style_link__GvpBu Text_module_strong__837f2f09 Text_module_size16__837f2f09" href="2019">2019</span>
+    <span class="style_link__GvpBu Text_module_strong__837f2f09 Text_module_size16__837f2f09" href="2020">2020</span>
+    <span class="style_link__GvpBu Text_module_strong__837f2f09 Text_module_size16__837f2f09" href="2021">2021</span>
+    <span class="style_link__GvpBu Text_module_strong__837f2f09 Text_module_size16__837f2f09" href="2022">2022</span>
+    <span class="style_link__GvpBu Text_module_strong__837f2f09 Text_module_size16__837f2f09" href="2023">2023</span>
+    <span class="style_link__GvpBu Text_module_strong__837f2f09 Text_module_size16__837f2f09" href="2024">2024</span>
+</nav>
+<div class="stats">
+    <div class="statistic-flex stat-2015 active-stat">
+        <div>{{ top_skills_2015_table|safe }}</div>
+        {% if top_skills_2015_img.url is not None %}
+        <img src="{{ top_skills_2015_img.url }}" alt="">
+        {% endif %}
     </div>
+
+    <div class="statistic-flex stat-2016">
+        <div>{{ top_skills_2016_table|safe }}</div>
+        {% if top_skills_2016_img.url is not None %}
+        <img src="{{ top_skills_2016_img.url }}" alt="">
+        {% endif %}
+    </div>
+
+    <div class="statistic-flex stat-2017">
+        <div>{{ top_skills_2017_table|safe }}</div>
+        {% if top_skills_2017_img.url is not None %}
+        <img src="{{ top_skills_2017_img.url }}" alt="">
+        {% endif %}
+    </div>
+
+    <div class="statistic-flex stat-2018">
+        <div>{{ top_skills_2018_table|safe }}</div>
+        {% if top_skills_2018_img.url is not None %}
+        <img src="{{ top_skills_2018_img.url }}" alt="">
+        {% endif %}
+    </div>
+
+    <div class="statistic-flex stat-2019">
+        <div>{{ top_skills_2019_table|safe }}</div>
+        {% if top_skills_2019_img.url is not None %}
+        <img src="{{ top_skills_2019_img.url }}" alt="">
+        {% endif %}
+    </div>
+
+    <div class="statistic-flex stat-2020">
+        <div>{{ top_skills_2020_table|safe }}</div>
+        {% if top_skills_2020_img.url is not None %}
+        <img src="{{ top_skills_2020_img.url }}" alt="">
+        {% endif %}
+    </div>
+
+    <div class="statistic-flex stat-2021">
+        <div>{{ top_skills_2021_table|safe }}</div>
+        {% if top_skills_2021_img.url is not None %}
+        <img src="{{ top_skills_2021_img.url }}" alt="">
+        {% endif %}
+    </div>
+
+    <div class="statistic-flex stat-2022">
+        <div>{{ top_skills_2022_table|safe }}</div>
+        {% if top_skills_2022_img.url is not None %}
+        <img src="{{ top_skills_2022_img.url }}" alt="">
+        {% endif %}
+    </div>
+
+    <div class="statistic-flex stat-2023">
+        <div>{{ top_skills_2023_table|safe }}</div>
+        {% if top_skills_2023_img.url is not None %}
+        <img src="{{ top_skills_2023_img.url }}" alt="">
+        {% endif %}
+    </div>
+
+    <div class="statistic-flex stat-2024">
+        <div>{{ top_skills_2024_table|safe }}</div>
+        {% if top_skills_2024_img.url is not None %}
+        <img src="{{ top_skills_2024_img.url }}" alt="">
+        {% endif %}
+    </div>
+</div>
+<script src="{% static 'js/swap_statistics.js' %}"></script>
 {% endblock %}
