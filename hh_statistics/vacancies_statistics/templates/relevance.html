@@ -7,7 +7,7 @@
 <div class="statistic-flex">
     <div>{{ profession_salary_table|safe }}</div>
     {% if profession_salary_img.url is not None %}
-    <img src="{{ profession_salary_chart.url }}" alt="">
+    <img src="{{ profession_salary_img.url }}" alt="">
     {% endif %}
 </div>
 
@@ -15,7 +15,7 @@
 <div class="statistic-flex">
     <div>{{ profession_vacancy_table|safe }}</div>
     {% if profession_vacancy_img.url is not None %}
-    <img src="{{ profession_vacancy_chart.url }}" alt="">
+    <img src="{{ profession_salary_img.url }}" alt="">
     {% endif %}
 </div>
 {% endblock %}

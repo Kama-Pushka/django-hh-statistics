@@ -17,12 +17,14 @@ Including another URLconf
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
+from django.views.generic import RedirectView
 
 from hh_statistics import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('vacancies_statistics.urls')),
+    path('favicon.ico', RedirectView.as_view(url='/static/img/favicon.ico', permanent=True)),
 ]
 
 if settings.DEBUG:

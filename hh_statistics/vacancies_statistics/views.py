@@ -2,6 +2,7 @@ import requests
 from django.forms import model_to_dict
 from django.http import Http404
 from django.shortcuts import render
+import threading
 
 import hhru
 
@@ -40,11 +41,18 @@ def skills_page(request):
 
 SELECTED_TEXT = 'NAME:("c#" OR "c sharp" OR "шарп" OR "с#")' # 'Системный аналитик'
 
+def get_add_info(v):
+    data = requests.get(v['url']).json()
+    v['desc'] = data['description']
+    v['skills'] = data['key_skills']
+
 def recent_vacancies_page(request):
     vacancies = [v for v in hhru.Client().search_vacancies(text=SELECTED_TEXT, period=1, order_by=hhru.consts.VACANCY_SEARCH_ORDER_PUBLICATION_TIME)][:10]
-    for v in vacancies:
-        data = requests.get(v['url']).json()
-        v['desc'] = data['description']
-        v['skills'] = data['key_skills']
+    thread_pool = [threading.Thread(target=get_add_info, args=(v,)) for v in vacancies]
+    for thread in thread_pool:
+        thread.start()
+
+    for thread in thread_pool:
+        thread.join()
 
     return render(request, 'recent_vacancies.html', {'vacancies': vacancies})
